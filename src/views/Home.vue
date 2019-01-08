@@ -1,18 +1,45 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home">    
+    <search-movies @searchMovies="searchMovies"/>
+    <movie-list :movies="getMovies"/>
+    <button @click="loadMore" v-if="hasMore">Load More</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import MovieList from '../components/MovieList';
+import searchMovies from '../components/SearchMovies'
 export default {
   name: 'home',
   components: {
-    HelloWorld
-  }
+    MovieList,
+    searchMovies
+  },
+  data() {
+    return {
+    }
+  },
+  created() {
+
+  },
+  computed: {
+    getMovies() {
+      return this.$store.getters.getMovies
+    },
+    hasMore() {
+      return this.$store.getters.hasMore
+    }
+
+  },
+  methods: {
+    searchMovies(filterBy) {
+      this.$store.dispatch({ type: 'searchMovies', filterBy })
+    },
+    loadMore() {
+      this.$store.dispatch({ type: 'loadMore' })
+    }
+  },
+  
 }
 </script>
+
