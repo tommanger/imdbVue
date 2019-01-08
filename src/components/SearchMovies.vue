@@ -44,7 +44,7 @@ export default {
         this.isLong = true
         return
       }
-      this.$emit('searchMovies', this.filterBy);
+      this.$emit('searchMovies', this.filterBy)
     },
     checkSearch() {
       this.$store.dispatch({ type: 'closeNoResults' })
@@ -101,7 +101,6 @@ export default {
   position: relative;
   font-weight: bold;
 }
-
 .error {
   margin: 0;
   border-radius: 10px;
@@ -124,7 +123,5 @@ export default {
 }
 .search-movies:focus + .icon {
   margin: 26px 0 0 118px;
-
 }
-
 </style>

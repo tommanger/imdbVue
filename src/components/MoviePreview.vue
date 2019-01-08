@@ -12,9 +12,6 @@
 <script>
 export default {
   props: ['movie'],
-  mounted() {
-    console.log(this.movie)
-  },
   methods: {
     goTo(movieId) {
       window.open(`https://www.imdb.com/title/${movieId}/?ref_=fn_al_tt_1`);

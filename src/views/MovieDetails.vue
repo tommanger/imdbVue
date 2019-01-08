@@ -7,7 +7,7 @@
           <span>({{movie.Year}})</span>
         </h1>
         <div>
-          <h1 class="details-rate">
+          <h1>
             {{movie.imdbRating}}
             <span>/10</span>
           </h1>

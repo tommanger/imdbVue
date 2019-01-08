@@ -9,18 +9,12 @@
 <script>
 import MovieList from '../components/MovieList';
 import searchMovies from '../components/SearchMovies'
+
 export default {
   name: 'home',
   components: {
     MovieList,
     searchMovies
-  },
-  data() {
-    return {
-    }
-  },
-  created() {
-
   },
   computed: {
     getMovies() {
@@ -29,7 +23,6 @@ export default {
     hasMore() {
       return this.$store.getters.hasMore
     }
-
   },
   methods: {
     searchMovies(filterBy) {

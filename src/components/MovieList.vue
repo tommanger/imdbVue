@@ -11,10 +11,6 @@ export default {
   props: ['movies'],
   components: {
     MoviePreview
-  },
-  data() {
-    return {
-    }
   }
 }
 </script>
